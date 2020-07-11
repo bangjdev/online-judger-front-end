@@ -51,8 +51,8 @@ export interface FormDataType {
     email: string,
     password1: string,
     password2: string,
-    firstname: string,
-    lastname: string
+    first_name: string,
+    last_name: string
 }
 
 export interface SubmissionFormDataType {

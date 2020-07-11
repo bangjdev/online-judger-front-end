@@ -136,8 +136,8 @@ const doSignUp = async (
             email: formData.email,
             password1: formData.password1,
             password2: formData.password2,
-            firstname: formData.firstname,
-            lastname: formData.lastname,
+            first_name: formData.first_name,
+            last_name: formData.last_name,
         }
     );    
 };

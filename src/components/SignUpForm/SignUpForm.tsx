@@ -10,9 +10,10 @@ const initialFormData = {
     email: "",
     password1: "",
     password2: "",
-    firstname: "",
-    lastname: ""
+    first_name: "",
+    last_name: ""
 } as StringIndexed<FormDataType>;
+
 interface FormProps {
     authModalToggle: Function
 }
@@ -25,9 +26,12 @@ const SignUpForm: React.FC<FormProps> = (props: FormProps) => {
     
     const formDataHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setFormData( (prev:StringIndexed<FormDataType> )=>{
-            prev[event.target.id]=event.target.value;
+            if (event.target !== null) {
+                prev[event.target.id]=event.target.value;
+            }
             return prev;
         });
+        console.log(formData);
     };
 
     const signUpHandler = () => {
@@ -52,13 +56,13 @@ const SignUpForm: React.FC<FormProps> = (props: FormProps) => {
             <Form className="mt-3">
                 <Row>
                     <Col>
-                        <Form.Group controlId="lastname">
+                        <Form.Group controlId="last_name">
                             <Form.Label>{language.dictionary['FORM_LASTNAME']}</Form.Label>
                             <Form.Control type="text" onChange={formDataHandler} />
                         </Form.Group>
                     </Col>
                     <Col>
-                        <Form.Group controlId="firstname">
+                        <Form.Group controlId="first_name">
                             <Form.Label>{language.dictionary['FORM_FIRSTNAME']}</Form.Label>
                             <Form.Control type="text" onChange={formDataHandler} />
                         </Form.Group>
