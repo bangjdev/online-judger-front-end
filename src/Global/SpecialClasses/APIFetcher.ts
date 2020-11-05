@@ -2,7 +2,7 @@ import * as HttpStatus from 'http-status-codes';
 import axios, { AxiosInstance } from 'axios';
 
 
-const BASE_URL = "http://127.0.0.1:8000";
+const BASE_URL = process.env.REACT_APP_BACKEND_API_URL;
 
 class APIFetcher {
     private fetcher: AxiosInstance;
